@@ -17,7 +17,7 @@ function [ u1, u2 ] = controller(~, state, des_state, params)
 kp_y = 1000;
 kp_z = 1000;
 kp_phi = 1000;
-
+ % asdsa
 kv_y = 10000;
 kv_z = 10000;
 kv_phi = 10000;
