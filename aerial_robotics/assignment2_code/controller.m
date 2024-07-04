@@ -16,13 +16,13 @@ function [ u1, u2 ] = controller(~, state, des_state, params)
 
 persistent phi_c;
 
-kp_y =   0.005;
+kp_y =   0.002;
 kp_z =   400;
-kp_phi = 150.0;
+kp_phi = 10;
  % asdsa
-kv_y =   250; %10000;
+kv_y =   220; %10000;
 kv_z =   200; %10000;
-kv_phi = 1050; %10000;
+kv_phi = 6.5; %10000;
 
 y = 1;
 z = 2;
@@ -35,8 +35,8 @@ phi_dot = state.omega;
 ep = des_state.pos - state.pos;
 ev = des_state.vel - state.vel;
 
-ev_y = ev(y)
-ep_y = ep(y)
+% ev_y = ev(y)
+% ep_y = ep(y)
 
 m = params.mass;
 g = params.gravity;
@@ -47,6 +47,8 @@ Ixx = params.Ixx;
 % des_state.acc = des_state.acc
 
 phi_c = (-1/g) * ( des_state.acc(y) +  kv_y * ev(y) + kp_y*ep(y) )
+% phi_c = 5 * pi / 180.0;
+% e_phi = phi_c - phi
 
 
 u1 = m * (g + des_state.acc(z) + kv_z*ev(z) + kp_z*ep(z));
