@@ -152,9 +152,10 @@ for iter = 1:max_iter
       err = [];
       break
     elseif norm(x(1:2) - stop_pos) > pos_tol
-      err = 'Did not reach goal';
+      err = sprintf('Did not reach goal - pos_err [%f]', norm(x(1:2) - stop_pos));
+      norm(x(1:2) - stop_pos)
     elseif norm(x(4:5)) > vel_tol
-      err = 'Velocity not close to zero';
+      err = sprintf('Velocity not close to zero [%d]', norm(x(4:5)));
     elseif abs(x(3)) > ang_tol
       err = 'Final angle not close to zero';
     end

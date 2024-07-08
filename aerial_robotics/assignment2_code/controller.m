@@ -15,14 +15,19 @@ function [ u1, u2 ] = controller(~, state, des_state, params)
 %   controls
 
 persistent phi_c;
+persistent n;
 
-kp_y =   0.002;
-kp_z =   400;
-kp_phi = 10;
+if isempty(n)
+    n = 0
+end
+
+kp_y =   1.8; %1.8;
+kp_z =   2000;
+kp_phi = 80; % 80 % best value so far: 26
  % asdsa
-kv_y =   220; %10000;
+kv_y =   25.;  %3.0; %10000;
 kv_z =   200; %10000;
-kv_phi = 6.5; %10000;
+kv_phi =  55; % 25 %15 % best value so far 9
 
 y = 1;
 z = 2;
@@ -45,11 +50,17 @@ Ixx = params.Ixx;
 % des_state.pos = des_state.pos
 % des_state.vel = des_state.vel
 % des_state.acc = des_state.acc
+% des_state_vel_y = des_state.vel(y)
 
-phi_c = (-1/g) * ( des_state.acc(y) +  kv_y * ev(y) + kp_y*ep(y) )
-% phi_c = 5 * pi / 180.0;
-% e_phi = phi_c - phi
+phi_c = (-1/g) * ( des_state.acc(y) +  kv_y * ev(y) + kp_y*ep(y) );
+% phi_c = (-1/g) * (    kv_y * ev(y) + kp_y*ep(y) )
 
+% if n < 2000
+%     phi_c = -20 * pi / 180.0
+% else
+%     phi_c = 0
+% end
+n = n + 1;
 
 u1 = m * (g + des_state.acc(z) + kv_z*ev(z) + kp_z*ep(z));
 u2 = Ixx * ( 0 + kv_phi*(-phi_dot) + kp_phi*(phi_c - phi));
