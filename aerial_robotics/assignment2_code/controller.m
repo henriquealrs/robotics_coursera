@@ -27,7 +27,7 @@ kp_phi = 80; % 80 % best value so far: 26
  % asdsa
 kv_y =   25.;  %3.0; %10000;
 kv_z =   200; %10000;
-kv_phi =  55; % 25 %15 % best value so far 9
+kv_phi =  60; % 25 %15 % best value so far 9
 
 y = 1;
 z = 2;
