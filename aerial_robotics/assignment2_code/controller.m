@@ -21,11 +21,11 @@ if isempty(n)
     n = 0
 end
 
-kp_y =   .1; %1.8;
+kp_y =   .001; %1.8;
 kp_z =   2000;
 kp_phi = 80; % 80 % best value so far: 26
  % asdsa
-kv_y =   25.;  %3.0; %10000;
+kv_y =   28.;  %3.0; %10000;
 kv_z =   200; %10000;
 kv_phi =  60; % 25 %15 % best value so far 9
 
