@@ -21,7 +21,7 @@ if isempty(n)
     n = 0
 end
 
-kp_y =   1.8; %1.8;
+kp_y =   1.7; %1.8;
 kp_z =   2000;
 kp_phi = 80; % 80 % best value so far: 26
  % asdsa
