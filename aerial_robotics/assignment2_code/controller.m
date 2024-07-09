@@ -18,16 +18,16 @@ persistent phi_c;
 persistent n;
 
 if isempty(n)
-    n = 0
+    n = 0;
 end
 
-kp_y =   1.; %1.8;
-kp_z =   1200;
-kp_phi = 80; % 80 % best value so far: 26
+kp_y =   0.9; %1.241; %1.8;
+kp_z =   61;
+kp_phi = 88.3; % 80 % best value so far: 26
  % asdsa
 kv_y =   8.5;  %3.0; %10000;
-kv_z =   200; %10000;
-kv_phi =  16.; % 25 %15 % best value so far 9
+kv_z =   52; %10000;
+kv_phi = 16.5; % 25 %15 % best value so far 9
 
 y = 1;
 z = 2;
