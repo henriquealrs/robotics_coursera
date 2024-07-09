@@ -21,13 +21,13 @@ if isempty(n)
     n = 0
 end
 
-kp_y =   .001; %1.8;
-kp_z =   2000;
+kp_y =   1.; %1.8;
+kp_z =   1200;
 kp_phi = 80; % 80 % best value so far: 26
  % asdsa
-kv_y =   28.;  %3.0; %10000;
+kv_y =   8.5;  %3.0; %10000;
 kv_z =   200; %10000;
-kv_phi =  60; % 25 %15 % best value so far 9
+kv_phi =  16.; % 25 %15 % best value so far 9
 
 y = 1;
 z = 2;
@@ -39,6 +39,8 @@ phi_dot = state.omega;
 
 ep = des_state.pos - state.pos;
 ev = des_state.vel - state.vel;
+% ep = [1; 1] - state.pos;
+% ev = [0; 0] - state.vel;
 
 % ev_y = ev(y)
 % ep_y = ep(y)
