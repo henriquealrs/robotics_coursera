@@ -1,5 +1,5 @@
 clear;
-clc;
+% clc;
 close all;
 
 addpath('utils');

@@ -21,13 +21,13 @@ if isempty(n)
     n = 0;
 end
 
-kp_y =   0.9; %1.241; %1.8;
-kp_z =   61;
-kp_phi = 88.3; % 80 % best value so far: 26
+kp_y =   5.; %1.241; %1.8;
+kp_z =   65;
+kp_phi = 150; % 80 % best value so far: 26
  % asdsa
-kv_y =   8.5;  %3.0; %10000;
+kv_y =   7.;  %3.0; %10000;
 kv_z =   52; %10000;
-kv_phi = 16.5; % 25 %15 % best value so far 9
+kv_phi = 13.2; % 25 %15 % best value so far 9
 
 y = 1;
 z = 2;
@@ -55,7 +55,7 @@ Ixx = params.Ixx;
 % des_state_vel_y = des_state.vel(y)
 
 phi_c = (-1/g) * ( des_state.acc(y) +  kv_y * ev(y) + kp_y*ep(y) );
-% phi_c = (-1/g) * (    kv_y * ev(y) + kp_y*ep(y) )
+% phi_c = (-1/g) * (    kv_y * ev(y) + kp_y*ep(y) );
 
 % if n < 2000
 %     phi_c = -20 * pi / 180.0
