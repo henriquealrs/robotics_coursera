@@ -1,0 +1,3 @@
+[submodule "aerial_robotics/quadrotor_autonomy"]
+	path = aerial_robotics/quadrotor_autonomy
+	url = git@github.com:ardyadipta/quadrotor_autonomy.git
