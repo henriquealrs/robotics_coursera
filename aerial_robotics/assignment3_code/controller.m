@@ -107,7 +107,7 @@ theta_des = (1/g) * (des_acc(x)* cos(traj_yaw) + des_acc(y)*sin(traj_yaw));
 des_rot = [phi_des; theta_des; traj_yaw];
 des_rot_dot = [0 0 traj_yawdot]';
 
-M = kp_ang.*(des_rot - rot) + kd_ang.*(des_rot_dot - omega)
+M = kp_ang.*(des_rot - rot) + kd_ang.*(des_rot_dot - omega);
 
 % M = zeros(3,1);
 % =================== Your code ends here ===================
